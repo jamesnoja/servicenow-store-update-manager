@@ -1,0 +1,592 @@
+/*
+ * Everything here is drawn from the Horizon design tokens the instance already
+ * publishes, so the page follows the operator's theme (including dark mode)
+ * rather than carrying a palette of its own.
+ */
+
+.sum-page {
+    font-family: var(--now-font-family, system-ui, sans-serif);
+    line-height: var(--now-static-line-height, 1.25);
+    color: rgb(var(--now-color_text--primary, 16, 23, 26));
+    background-color: rgb(var(--now-color_background--primary, 255, 255, 255));
+    padding: var(--now-static-space--xl, 1.5rem);
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--now-static-space--lg, 1rem);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.sum-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--now-static-space--lg, 1rem);
+    flex-wrap: wrap;
+}
+
+.sum-header__subtitle {
+    margin: var(--now-static-space--xs, 0.25rem) 0 0;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-size: 0.875rem;
+}
+
+.sum-header__actions {
+    display: flex;
+    gap: var(--now-static-space--sm, 0.5rem);
+    align-items: center;
+}
+
+/* Filters ----------------------------------------------------------------- */
+
+.sum-filters {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--now-static-space--lg, 1rem);
+    flex-wrap: wrap;
+    padding: var(--now-static-space--md, 0.75rem);
+    border: 1px solid rgb(var(--now-container--border-color, 207, 213, 215));
+    border-radius: var(--now-container--border-radius, 8px);
+    background-color: rgb(var(--now-color_background--secondary, 245, 246, 247));
+}
+
+.sum-filters__group {
+    display: flex;
+    gap: var(--now-static-space--xs, 0.25rem);
+}
+
+.sum-filters__search {
+    min-width: 16rem;
+}
+
+.sum-filters__count {
+    margin: 0 0 var(--now-static-space--xs, 0.25rem) auto;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-size: 0.875rem;
+}
+
+/* Table ------------------------------------------------------------------- */
+
+.sum-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid rgb(var(--now-container--border-color, 207, 213, 215));
+    border-radius: var(--now-container--border-radius, 8px);
+    overflow: hidden;
+}
+
+.sum-table th,
+.sum-table td {
+    padding: var(--now-static-space--md, 0.75rem) var(--now-static-space--lg, 1rem);
+    border-bottom: 1px solid rgb(var(--now-container--border-color, 207, 213, 215));
+    text-align: left;
+    vertical-align: middle;
+}
+
+.sum-table thead {
+    background-color: rgb(var(--now-menu-list--primary--background-color, 245, 247, 249));
+}
+
+.sum-table thead th {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.sum-table tbody tr {
+    background-color: rgb(var(--now-container--color, 255, 255, 255));
+}
+
+.sum-table tbody tr:hover {
+    background-color: rgb(var(--now-menu-list--primary--background-color--hover, 235, 237, 239));
+}
+
+.sum-table__row--selected {
+    background-color: rgba(var(--now-color--primary-1, 0, 128, 163), var(--now-opacity--least, 0.08));
+}
+
+.sum-table__check {
+    width: 3rem;
+}
+
+.sum-table__actions {
+    width: 3.5rem;
+    text-align: right;
+}
+
+.sum-table__name {
+    display: block;
+    font-weight: 600;
+}
+
+.sum-table__scope {
+    display: block;
+    font-size: 0.8125rem;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+.sum-table__version {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.sum-table__version--target {
+    font-weight: 600;
+}
+
+.sum-table__picker {
+    min-width: 12rem;
+}
+
+.sum-table__detail {
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-size: 0.875rem;
+}
+
+/* Pills, tags and states -------------------------------------------------- */
+
+.sum-pill,
+.sum-tag {
+    display: inline-block;
+    padding: 0.0625rem var(--now-static-space--sm, 0.5rem);
+    border-radius: var(--now-static-border-radius--lg, 0.5rem);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sum-pill--major {
+    background-color: rgb(var(--now-indicator--primary_critical--background-color, 229, 34, 57));
+    color: rgb(var(--now-indicator_label--primary_critical--color, 255, 255, 255));
+}
+
+.sum-pill--minor {
+    background-color: rgb(var(--now-indicator--primary_warning--background-color, 221, 182, 101));
+    color: rgb(var(--now-indicator_label--primary_warning--color, 16, 23, 26));
+}
+
+.sum-pill--patch {
+    background-color: rgb(var(--now-indicator--primary_info--background-color, 0, 128, 163));
+    color: rgb(var(--now-indicator_label--primary_info--color, 255, 255, 255));
+}
+
+.sum-pill--other {
+    background-color: rgb(var(--now-color_background--tertiary, 226, 229, 231));
+    color: rgb(var(--now-color_text--primary, 16, 23, 26));
+}
+
+.sum-tag {
+    margin-top: var(--now-static-space--xxs, 0.125rem);
+    margin-right: var(--now-static-space--xs, 0.25rem);
+    background-color: rgb(var(--now-color_background--tertiary, 226, 229, 231));
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-weight: 400;
+}
+
+.sum-state {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--now-static-space--xs, 0.25rem);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.sum-state--installed {
+    color: rgb(var(--now-indicator--primary_positive--background-color, 62, 134, 0));
+}
+
+.sum-state--failed {
+    color: rgb(var(--now-indicator--primary_critical--background-color, 229, 34, 57));
+}
+
+.sum-state--invalid,
+.sum-state--rolled_back {
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+.sum-state--in_progress {
+    color: rgb(var(--now-color--primary-1, 0, 128, 163));
+}
+
+.sum-state--ready {
+    color: rgb(var(--now-color_text--tertiary, 115, 127, 132));
+}
+
+.sum-state__spinner {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: 2px solid rgba(var(--now-loading_indicator--primary--color, 0, 128, 163), 0.25);
+    border-top-color: rgb(var(--now-loading_indicator--primary--color, 0, 128, 163));
+    animation: sum-spin 1s linear infinite;
+}
+
+@keyframes sum-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sum-state__spinner {
+        animation: none;
+    }
+}
+
+/* Selection bar ----------------------------------------------------------- */
+
+.sum-selection {
+    position: sticky;
+    bottom: var(--now-static-space--lg, 1rem);
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--now-static-space--lg, 1rem);
+    padding: var(--now-static-space--md, 0.75rem) var(--now-static-space--lg, 1rem);
+    background-color: rgb(var(--now-container-card--background-color, 255, 255, 255));
+    border: 1px solid rgb(var(--now-container-card--border-color, 207, 213, 215));
+    border-radius: var(--now-container-card--border-radius, 8px);
+    box-shadow: var(--now-static-drop-shadow--lg);
+}
+
+.sum-selection__count {
+    margin: 0;
+    font-weight: 600;
+}
+
+.sum-selection__actions {
+    display: flex;
+    gap: var(--now-static-space--sm, 0.5rem);
+}
+
+/* Review and install ------------------------------------------------------ */
+
+.sum-plan {
+    max-width: 28rem;
+}
+
+.sum-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--now-static-space--sm, 0.5rem);
+}
+
+.sum-progress {
+    padding: var(--now-static-space--lg, 1rem);
+    border: 1px solid rgb(var(--now-container-card--border-color, 207, 213, 215));
+    border-radius: var(--now-container-card--border-radius, 8px);
+    background-color: rgb(var(--now-container-card--background-color, 255, 255, 255));
+}
+
+.sum-progress__counts {
+    display: flex;
+    gap: var(--now-static-space--xl, 1.5rem);
+    list-style: none;
+    margin: var(--now-static-space--md, 0.75rem) 0 0;
+    padding: 0;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-size: 0.875rem;
+}
+
+.sum-progress__counts strong {
+    color: rgb(var(--now-color_text--primary, 16, 23, 26));
+    font-size: 1rem;
+}
+
+.sum-note {
+    margin: 0;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+/* Empty state ------------------------------------------------------------- */
+
+.sum-empty {
+    padding: var(--now-static-space--3xl, 2.5rem);
+    text-align: center;
+    border: 1px dashed rgb(var(--now-container--border-color, 207, 213, 215));
+    border-radius: var(--now-container--border-radius, 8px);
+}
+
+.sum-empty__title {
+    margin: 0 0 var(--now-static-space--xs, 0.25rem);
+    font-weight: 600;
+}
+
+.sum-empty__body {
+    margin: 0;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+.sum-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+@media (max-width: 48rem) {
+    .sum-filters__count {
+        margin-left: 0;
+    }
+
+    .sum-table__scope {
+        word-break: break-all;
+    }
+}
+
+/* Detail panel ------------------------------------------------------------ */
+
+.sum-split {
+    display: flex;
+    gap: var(--now-static-space--lg, 1rem);
+    align-items: flex-start;
+}
+
+.sum-split__main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sum-panel {
+    flex: 0 0 22rem;
+    max-width: 22rem;
+    position: sticky;
+    top: var(--now-static-space--lg, 1rem);
+    padding: var(--now-static-space--lg, 1rem);
+    border: 1px solid rgb(var(--now-container-card--border-color, 207, 213, 215));
+    border-radius: var(--now-container-card--border-radius, 8px);
+    background-color: rgb(var(--now-container-card--background-color, 255, 255, 255));
+    box-shadow: var(--now-static-drop-shadow--sm);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.sum-panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--now-static-space--sm, 0.5rem);
+}
+
+.sum-panel__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.sum-panel__scope,
+.sum-ladder__meta {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+.sum-panel__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--now-static-space--sm, 0.5rem);
+    margin: var(--now-static-space--md, 0.75rem) 0;
+}
+
+.sum-ladder {
+    list-style: none;
+    margin: var(--now-static-space--md, 0.75rem) 0 0;
+    padding: 0 0 0 var(--now-static-space--lg, 1rem);
+    border-left: 2px solid rgb(var(--now-container--border-color, 207, 213, 215));
+}
+
+.sum-ladder__item {
+    padding-bottom: var(--now-static-space--lg, 1rem);
+    position: relative;
+}
+
+.sum-ladder__item::before {
+    content: "";
+    position: absolute;
+    left: calc(-1rem - 5px);
+    top: 0.35rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(var(--now-color--primary-1, 0, 128, 163));
+}
+
+.sum-ladder__head {
+    display: flex;
+    align-items: center;
+    gap: var(--now-static-space--sm, 0.5rem);
+    margin-bottom: var(--now-static-space--xxs, 0.125rem);
+}
+
+.sum-table__link {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    color: rgb(var(--now-link--primary--color, 0, 113, 143));
+    cursor: pointer;
+}
+
+.sum-table__link:hover {
+    text-decoration: underline;
+}
+
+.sum-table__link:focus-visible {
+    outline: 2px solid rgb(var(--now-color_focus-ring, 53, 147, 37));
+    outline-offset: 2px;
+}
+
+.sum-table__row--active {
+    box-shadow: inset 3px 0 0 rgb(var(--now-color--primary-1, 0, 128, 163));
+}
+
+/* Dialog and extra actions ------------------------------------------------ */
+
+.sum-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: var(--now-static-space--lg, 1rem);
+}
+
+.sum-actions--start {
+    justify-content: flex-start;
+}
+
+/* Guides ------------------------------------------------------------------ */
+
+.sum-guide {
+    max-width: 52rem;
+}
+
+.sum-guide__lead {
+    font-size: 1.0625rem;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    margin: 0 0 var(--now-static-space--xl, 1.5rem);
+}
+
+.sum-guide__h2 {
+    margin: 0 0 var(--now-static-space--sm, 0.5rem);
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.sum-guide p {
+    margin: 0 0 var(--now-static-space--md, 0.75rem);
+}
+
+.sum-guide code {
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 0.875em;
+    padding: 0.0625rem 0.25rem;
+    border-radius: var(--now-static-border-radius--sm, 0.125rem);
+    background-color: rgb(var(--now-color_background--tertiary, 226, 229, 231));
+}
+
+.sum-guide__list {
+    margin: 0 0 var(--now-static-space--md, 0.75rem);
+    padding-left: var(--now-static-space--xl, 1.5rem);
+}
+
+.sum-guide__list li {
+    margin-bottom: var(--now-static-space--sm, 0.5rem);
+}
+
+.sum-guide__aside {
+    padding: var(--now-static-space--md, 0.75rem);
+    border-left: 3px solid rgb(var(--now-container--border-color, 207, 213, 215));
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+    font-size: 0.9375rem;
+}
+
+.sum-guide__tablewrap {
+    overflow-x: auto;
+    margin-bottom: var(--now-static-space--md, 0.75rem);
+}
+
+.sum-step {
+    display: flex;
+    gap: var(--now-static-space--lg, 1rem);
+    padding-bottom: var(--now-static-space--xl, 1.5rem);
+}
+
+.sum-step__number {
+    flex: 0 0 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    background-color: rgb(var(--now-color--primary-1, 0, 128, 163));
+    color: rgb(var(--now-actionable_label--primary--color, 255, 255, 255));
+}
+
+.sum-step__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.sum-qa {
+    padding: var(--now-static-space--lg, 1rem) 0;
+    border-bottom: 1px solid rgb(var(--now-container--border-color, 207, 213, 215));
+}
+
+.sum-qa__q {
+    margin: 0 0 var(--now-static-space--sm, 0.5rem);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sum-qa__a {
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+@media (max-width: 64rem) {
+    .sum-split {
+        flex-direction: column;
+    }
+
+    .sum-panel {
+        position: static;
+        flex-basis: auto;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+.sum-dialog__zone {
+    margin: calc(-1 * var(--now-static-space--sm, 0.5rem)) 0 0;
+    font-size: 0.8125rem;
+    color: rgb(var(--now-color_text--secondary, 75, 85, 89));
+}
+
+/* Diagnostics ------------------------------------------------------------- */
+
+.sum-check {
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.sum-check--positive {
+    color: rgb(var(--now-indicator--primary_positive--background-color, 62, 134, 0));
+}
+
+.sum-check--warning {
+    color: rgb(var(--now-indicator--primary_warning--background-color, 156, 84, 10));
+}
+
+.sum-check--critical {
+    color: rgb(var(--now-indicator--primary_critical--background-color, 229, 34, 57));
+}

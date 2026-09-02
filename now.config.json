@@ -1,0 +1,7 @@
+{
+    "scope": "x_301833_store_upd",
+    "scopeId": "8662eaca92934d24a7d0d882e0fa811c",
+    "name": "Store Update Manager",
+    "tsconfigPath": "./src/server/tsconfig.json",
+    "packageSourceCodeOnInstance": true
+}
