@@ -7,7 +7,7 @@ available, lets you bulk-select them, and installs them as one batch with live p
 [![Licence](https://img.shields.io/badge/licence-MIT-green)](LICENSE)
 [![Built with](https://img.shields.io/badge/built%20with-Now%20SDK-brightgreen)](https://developer.servicenow.com/dev.do#!/reference/now-sdk)
 
-![The updates list](docs/images/01-updates-list.png)
+![The updates list](docs/images/01-updates-list.jpg)
 
 ---
 
@@ -61,9 +61,9 @@ pressing anything. Refreshing a catalogue and installing software are different 
 
 | | |
 |---|---|
-| ![Review step](docs/images/02-review.png) | **Review** — pick a specific version per application, see what is blocked or incompatible before committing. |
-| ![Installer](docs/images/03-installer.png) | **Installer** — per-application state and the platform's own reason. The batch id is in the URL, so closing the tab and reopening the link rejoins the same run. |
-| ![Diagnostics](docs/images/04-diagnostics.png) | **Diagnostics** — read-only preflight for an instance nobody has run this on. |
+| ![Review step](docs/images/02-review.jpg) | **Review** — pick a specific version per application, see what is blocked or incompatible before committing. |
+| ![Installer](docs/images/03-installer.jpg) | **Installer** — per-application state and the platform's own reason. The batch id is in the URL, so closing the tab and reopening the link rejoins the same run. |
+| ![Diagnostics](docs/images/04-diagnostics.jpg) | **Diagnostics** — read-only preflight for an instance nobody has run this on. |
 
 ## Requirements
 
